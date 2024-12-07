@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="kanban-header">
+            <strong class="kanban-title">Kanban</strong>
+        </div>
+
+        <div class="kanban-table">
+            <div class="kanban-block kanban-form">
+                <strong class="form-title">Task</strong>
+
+                <div class="input-container">
+                    <label for="task-name" class="input-label">Task Name</label>
+                    <input type="text" id="task-name" class="input-text">
+
+                    <label for="task-description" class="input-label">Task Description</label>
+                    <textarea id="task-description" class="textarea-text" rows="4"></textarea>
+
+                    <label for="task-responsible" class="input-label">Task Responsible</label>
+                    <input type="text" id="task-responsible" class="input-text">
+                </div>
+
+                <input type="button" class="btn-create" id="btn-create-edit" value="Create Task" onclick="createTask(event)"> 
+            </div>
+
+            <div class="kanban-block" id="pending" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Pending</strong>
+            </div>
+
+            <div class="kanban-block" id="in-progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>In Progress</strong>
+            </div>
+
+            <div class="kanban-block" id="completed" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <strong>Completed</strong>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
